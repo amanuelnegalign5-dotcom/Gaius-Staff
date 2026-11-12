@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="am">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e5a5a">
+<meta name="description" content="ጋይዮስ የወርሃዊ ክንውን፣ አፈጻጸምና ሪፖርት መከታተያ።">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<title>ጋይዮስ — የሪፖርት ሥርዓት</title>
+<style>
+:root{--bg:#f1f5f6;--card:#fff;--ink:#14232b;--mute:#5c6e77;--line:#d5dee2;--pri:#0e5a5a;--on:#fff;--g:#1f7a34;--gb:#e0f0e3;--a:#9a6200;--ab:#fbefd2;--r:#b3261e;--rb:#f9e0de;--shadow:0 5px 18px rgba(16,42,50,.06);color-scheme:light;--focus:0 0 0 3px rgba(14,90,90,.18)}
+:root[data-theme="dark"]{--bg:#0f1a1f;--card:#17262d;--ink:#e6eef1;--mute:#97abb4;--line:#2a3d46;--pri:#5cc2bc;--on:#06201f;--g:#6fd08a;--gb:#16301d;--a:#f0b94d;--ab:#3a2c0c;--r:#f2877f;--rb:#3c1714;--shadow:0 5px 18px rgba(0,0,0,.18);color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:120px}body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 "Noto Sans Ethiopic",Nyala,Arial,sans-serif;max-width:920px;margin-inline:auto;padding-bottom:calc(28px + env(safe-area-inset-bottom));}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;box-shadow:var(--focus);border-color:var(--pri)}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(14px);padding:12px 16px 10px;border-bottom:1px solid var(--line)}.headtop{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brandmark{width:38px;height:38px;border-radius:12px;background:var(--pri);color:var(--on);display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}.brand h1{font-size:17px;line-height:1.25;margin:0;color:var(--pri);font-weight:800}.subtitle{font-size:11px;color:var(--mute);margin-top:2px}.head-actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.iconbtn,.smallbtn,.btn,.tab{border:1px solid var(--line);border-radius:10px;background:var(--card);min-height:38px;padding:7px 11px}.iconbtn{width:40px;padding:7px;font-size:17px}.smallbtn{font-size:12px;min-height:34px;padding:6px 9px}.btn{background:var(--pri);border-color:var(--pri);color:var(--on);font-weight:700;padding:10px 15px}.btn.secondary{background:var(--card);color:var(--ink);border-color:var(--line)}.btn.danger{background:var(--r);border-color:var(--r);color:white}.filterbar{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}.filterbar select,.filterbar input{min-height:38px;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:var(--card)}#mo{flex:1;min-width:125px}#yr{width:86px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.tab{font-weight:700;color:var(--mute)}.tab.active{background:var(--pri);border-color:var(--pri);color:var(--on)}main{padding:16px}.notice{background:var(--ab);color:var(--a);padding:10px 12px;border-radius:10px;font-size:13px;margin-bottom:12px}.notice.good{background:var(--gb);color:var(--g)}.panel{display:none}.panel.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px;margin-bottom:13px;box-shadow:var(--shadow)}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}.card h2{font-size:15px;font-weight:800;margin:0}.muted{color:var(--mute);font-size:12px}.hero{display:flex;align-items:center;justify-content:space-between;gap:14px}.big{font-size:clamp(42px,10vw,58px);font-weight:800;line-height:1;color:var(--pri);letter-spacing:-2px}.hero .muted{max-width:210px;margin-top:7px}.rag{font-size:12px;font-weight:700;padding:5px 9px;border-radius:20px;white-space:nowrap}.G{background:var(--gb);color:var(--g)}.A{background:var(--ab);color:var(--a)}.R{background:var(--rb);color:var(--r)}.N{background:var(--line);color:var(--mute)}.bar{height:10px;border-radius:10px;overflow:hidden;background:var(--line);display:flex;margin-top:15px}.bar i{display:block;height:100%}.legend{font-size:11px;color:var(--mute);line-height:1.8;margin-top:6px}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:15px}.kpi{background:var(--bg);border-radius:10px;padding:10px}.kpi b{display:block;font-size:22px;line-height:1.2}.kpi span{font-size:11px;color:var(--mute)}.it{padding:10px 0;border-top:1px solid var(--line)}.it:first-child{border-top:0}.top{display:flex;justify-content:space-between;gap:9px;align-items:center}.meter{height:6px;background:var(--line);border-radius:5px;margin-top:7px;overflow:hidden}.meter i{display:block;height:100%;background:var(--pri);border-radius:5px}.empty{color:var(--mute);font-size:13px;padding:10px 0}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.fieldgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.fieldgrid>div{min-width:0}label{display:block;font-size:12px;color:var(--mute);font-weight:600;margin:8px 0 4px}input,select,textarea{width:100%;min-height:42px;padding:9px 10px;border:1px solid var(--line);border-radius:9px;background:var(--card)}textarea{min-height:76px;resize:vertical}.form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.error{color:var(--r);font-size:12px;margin-top:8px}.privacy{font-size:12px;color:var(--mute);background:var(--bg);padding:9px 10px;border-radius:9px;margin-top:12px}.record{padding:12px 0;border-top:1px solid var(--line)}.record:first-child{border-top:0}.recordtitle{font-weight:700;line-height:1.4;min-width:0}.recordmeta{font-size:11px;color:var(--mute);margin-top:4px}.recordactions{display:flex;gap:6px;flex:none}.recordactions button{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 8px;font-size:12px}.searchrow{display:grid;grid-template-columns:1fr 150px;gap:8px;margin-bottom:10px}.checkline{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line);font-size:13px}.checkline:first-child{border-top:0}.checkicon{font-weight:800}.reportbox{min-height:190px;font-size:12px;line-height:1.7}.footer{text-align:center;color:var(--mute);font-size:11px;padding:4px 12px 16px}.hidden{display:none!important}.filelabel{display:inline-flex;align-items:center;justify-content:center}.filelabel input{display:none}.pillnote{font-size:11px;border:1px solid var(--line);border-radius:20px;padding:4px 8px;color:var(--mute)}.sectionhint{font-size:12px;color:var(--mute);margin:-2px 0 12px}.summarylines{white-space:pre-line;font-size:13px;line-height:1.8}.divider{height:1px;background:var(--line);margin:12px 0}
+@media(min-width:700px){header{padding-inline:22px}main{padding:22px}.dashboardgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 13px}.dashboardgrid .wide{grid-column:1/-1}.hero .muted{max-width:none}.card{padding:17px}}
+@media(max-width:430px){.head-actions .smallbtn{padding:6px 8px}.brand h1{font-size:15px}.subtitle{display:none}.headtop{align-items:flex-start}.fieldgrid{gap:8px}.kpi{padding:9px}.kpi b{font-size:19px}.searchrow{grid-template-columns:1fr 120px}main{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="headtop">
+    <div class="brand"><div class="brandmark" aria-hidden="true">ጋ</div><div><h1>ጋይዮስ — የሪፖርት ሥርዓት</h1><div class="subtitle">የክንውን · አፈጻጸም · ማስረጃ · የወር ሪፖርት</div></div></div>
+    <div class="head-actions">
+      <button class="smallbtn" id="csvBtn" title="CSV ላክ">CSV ↓</button>
+      <button class="smallbtn" id="backupBtn" title="ሙሉ የዳታ ቅጂ">Backup</button>
+      <label class="smallbtn filelabel" title="የቀድሞ ዳታ መልስ">Restore<input type="file" id="restoreFile" accept="application/json,.json"></label>
+      <button class="iconbtn" id="themeBtn" aria-label="ገጽታ ቀይር" title="ገጽታ ቀይር">◐</button>
+    </div>
+  </div>
+  <div class="filterbar">
+    <select id="mo" aria-label="ወር"></select>
+    <input id="yr" type="number" min="2000" max="2100" inputmode="numeric" aria-label="ዓመት">
+    <button class="smallbtn" id="shareJump">ሪፖርት አጋራ</button>
+  </div>
+  <nav class="tabs" aria-label="ዋና ምናሌ">
+    <button class="tab active" data-tab="dash">ዳሽቦርድ</button>
+    <button class="tab" data-tab="list">ዝርዝር</button>
+    <button class="tab" data-tab="form">አዲስ ክንውን +</button>
+  </nav>
+</header>
+<main>
+  <div id="storageNotice" class="notice good">ዳታዎ በዚህ መሣሪያ ላይ በራስ-ሰር ይቀመጣል።</div>
+  <section class="panel active" id="dash">
+    <div class="dashboardgrid">
+      <div class="card wide">
+        <div class="hero"><div><div class="big" id="hp">0%</div><div class="muted">አጠቃላይ አፈጻጸም (የተከናወነ ÷ የታቀደ)</div></div><span id="hr" class="rag N">መረጃ የለም</span></div>
+        <div class="bar" id="statusBar" aria-label="የክንውን ሁኔታ ስርጭት"></div><div class="legend" id="statusLegend"></div>
+        <div class="kpis"><div class="kpi"><b id="k1">0</b><span>ክንውኖች</span></div><div class="kpi"><b id="k2">0 / 0</b><span>ዕቅድ ያደረሱ</span></div><div class="kpi"><b id="k3">0</b><span>Views / Reach</span></div></div>
+      </div>
+      <div class="card"><div class="cardhead"><h2>የአመራር ማጠቃለያ</h2><span class="pillnote" id="periodLabel"></span></div><div id="narrative" class="summarylines">ለዚህ ወር መረጃ አልተመዘገበም።</div></div>
+      <div class="card"><h2>ማዕከላት</h2><div id="centerList"></div></div>
+      <div class="card"><h2>ዲፓርትመንቶች</h2><div id="deptList"></div></div>
+      <div class="card"><h2>ዋና ዋና ክፍተቶች (ከፍተኛ 5)</h2><div id="gapList"></div></div>
+      <div class="card"><h2>የመረጃ ጥራት ፍተሻ</h2><div id="qualityChecks"></div></div>
+      <div class="card wide" id="shareCard"><div class="cardhead"><h2>የወር ሪፖርት</h2><button class="smallbtn" id="copyReport">ቅዳ / አጋራ</button></div><textarea id="reportText" class="reportbox" readonly aria-label="የወር ሪፖርት ጽሑፍ"></textarea><div id="shareMessage" class="muted" role="status" aria-live="polite"></div></div>
+    </div>
+  </section>
+  <section class="panel" id="list">
+    <div class="card"><div class="cardhead"><h2>የተመረጠው ወር ክንውኖች</h2><span id="recordCount" class="pillnote">0 ክንውን</span></div>
+      <div class="searchrow"><input id="search" type="search" placeholder="በርዕስ፣ ኃላፊ ወይም ማስረጃ ፈልግ…"><select id="statusFilter"><option value="">ሁሉም ሁኔታዎች</option></select></div>
+      <div id="recordList"></div>
+    </div>
+  </section>
+  <section class="panel" id="form">
+    <div class="card">
+      <div class="cardhead"><h2 id="formTitle">አዲስ ክንውን</h2><span class="pillnote" id="formPeriod"></span></div>
+      <input type="hidden" id="recordId">
+      <div class="fieldgrid">
+        <div><label for="dept">ዲፓርትመንት</label><select id="dept"></select></div>
+        <div><label for="center">ማዕከል</label><select id="center"></select></div>
+      </div>
+      <label for="title">የክንውን ርዕስ *</label><input id="title" maxlength="180" autocomplete="off" placeholder="የክንውኑን ርዕስ ያስገቡ">
+      <div class="fieldgrid">
+        <div><label for="planned">የታቀደ መጠን *</label><input id="planned" type="number" min="0" step="any" inputmode="decimal"></div>
+        <div><label for="actual">የተከናወነ መጠን *</label><input id="actual" type="number" min="0" step="any" inputmode="decimal"></div>
+        <div><label for="status">ሁኔታ</label><select id="status"></select></div>
+        <div><label for="priority">ቅድሚያ</label><select id="priority"></select></div>
+        <div><label for="day">የክንውን ቀን (የወሩ ቀን)</label><input id="day" type="number" min="1" max="30" inputmode="numeric" placeholder="1–30"></div>
+        <div><label for="reach">Views / Reach</label><input id="reach" type="number" min="0" step="any" inputmode="decimal"></div>
+      </div>
+      <label for="reason">ያጋጠመ ችግር / ምክንያት (ከዕቅድ በታች ከሆነ ግዴታ)</label><textarea id="reason" maxlength="2000"></textarea>
+      <label for="action">የተወሰደ እርምጃ (ከዕቅድ በታች ከሆነ ግዴታ)</label><textarea id="action" maxlength="2000"></textarea>
+      <div class="fieldgrid"><div><label for="owner">ኃላፊ (ስም ወይም ሚና)</label><input id="owner" maxlength="120"></div><div><label for="due">የማጠናቀቂያ ቀን</label><input id="due" maxlength="80" placeholder="ለምሳሌ ኅዳር 12"></div></div>
+      <label for="evidence">ማስረጃ / Link</label><input id="evidence" type="url" inputmode="url" placeholder="https://…">
+      <div class="privacy">ለምክርና ድጋፍ የግል ስም ወይም ስልክ አያስገቡ፤ የጉዳይ ኮድ ይጠቀሙ።</div>
+      <div id="formError" class="error" role="alert"></div>
+      <div class="form-actions"><button class="btn" id="saveBtn">አስቀምጥ</button><button class="btn secondary" id="newBtn">አዲስ ቅጽ</button><button class="btn danger hidden" id="deleteBtn">ሰርዝ</button></div>
+    </div>
+  </section>
+</main>
+<div class="footer">ጋይዮስ · የሪፖርት ሥርዓት · ዳታዎ በዚህ መሣሪያ ላይ ብቻ ይቀመጣል</div>
+<script>
+(()=>{
+'use strict';
+const MONTHS=['መስከረም','ጥቅምት','ኅዳር','ታኅሣሥ','ጥር','የካቲት','መጋቢት','ሚያዝያ','ግንቦት','ሰኔ','ሐምሌ','ነሐሴ','ጳጉሜ'];
+const DEPTS=['ሚዲያ','ክትትል','አገልግሎት አስተባባሪ','ምክርና ድጋፍ','ምርምርና ሥልጠና','ዝግጅት (Event)'];
+const CENTERS=['ዋና ቢሮ (HQ)','ገርጂ','ቢሾፍቱ/ደብረ ዘይት','መካኒሳ/ላፍቶ','ሚኒስትሪ አቀፍ','ሌላ'];
+const STATUSES=['አልተጀመረም','በሂደት ላይ ነው','ተጠናቋል','ዘግይቷል','ውሳኔ ይፈልጋል'];
+const PRIORITIES=['ከፍተኛ','መካከለኛ','ዝቅተኛ'];
+const STATUS_COLORS=['var(--line)','var(--a)','var(--g)','var(--r)','var(--pri)'];
+const RAG=[[1,'ዕቅድ ተሟልቷል','G'],[.9,'ለማጠናቀቅ ቅርብ','G'],[.75,'ክትትል ይፈልጋል','A'],[0,'አስቸኳይ እርምጃ','R']];
+const STORAGE_KEY='gaius-report-system-v2';
+const $=id=>document.getElementById(id);
+const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const number=value=>Number.isFinite(Number(value))?Number(value):0;
+const fmt=value=>number(value).toLocaleString('en-US',{maximumFractionDigits:2});
+const percent=value=>Math.round(value*100)+'%';
+const makeId=rows=>{const max=rows.reduce((n,row)=>Math.max(n,parseInt(String(row.id||'').replace(/^GA-/,'').replace(/\D/g,''),10)||0),0)+1;return 'GA-'+String(max).padStart(3,'0')};
+let rows=[];let selectedYear=2019;let selectedMonth=2;let deleteArmed=false;let deleteTimer=null;
+
+function load(){try{const raw=localStorage.getItem(STORAGE_KEY);if(raw){const data=JSON.parse(raw);if(Array.isArray(data))rows=data.filter(x=>x&&x.id).map(normalizeRecord)}}catch(error){console.warn('Could not read saved records',error);showNotice('የተቀመጠውን ዳታ ማንበብ አልተቻለም። Backup ፋይል ካለዎት Restore ያድርጉ።',false)}}
+function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(rows));$('storageNotice').textContent='ዳታዎ በዚህ መሣሪያ ላይ በራስ-ሰር ተቀምጧል።';$('storageNotice').className='notice good';return true}catch(error){showNotice('ዳታውን ማስቀመጥ አልተቻለም። የBrowser ማከማቻ ቦታ ሊሞላ ይችላል፤ CSV/Backup ያውርዱ።',false);return false}}
+function showNotice(message,good){$('storageNotice').textContent=message;$('storageNotice').className='notice'+(good?' good':'')}
+function normalizeRecord(row){return {id:String(row.id),y:Number(row.y)||selectedYear,m:String(row.m||MONTHS[selectedMonth]),d:String(row.d||DEPTS[0]),c:String(row.c||CENTERS[0]),t:String(row.t||''),p:number(row.p),a:number(row.a),s:String(row.s||STATUSES[0]),pr:String(row.pr||PRIORITIES[1]),dy:row.dy===''||row.dy==null?'':String(row.dy),rc:number(row.rc),why:String(row.why||''),act:String(row.act||''),own:String(row.own||''),due:String(row.due||''),ev:String(row.ev||''),updatedAt:row.updatedAt||new Date().toISOString()}}
+function options(id,items,includeBlank=false){$(id).innerHTML=(includeBlank?'<option value="">ሁሉም</option>':'')+items.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('')}
+function init(){options('mo',MONTHS);options('dept',DEPTS);options('center',CENTERS);options('status',STATUSES);options('priority',PRIORITIES);options('statusFilter',STATUSES,true);$('mo').value=MONTHS[selectedMonth];$('yr').value=selectedYear;}
+function sum(items){return {n:items.length,p:items.reduce((s,x)=>s+number(x.p),0),a:items.reduce((s,x)=>s+number(x.a),0),met:items.filter(x=>number(x.a)>=number(x.p)).length,reach:items.reduce((s,x)=>s+number(x.rc),0)}}
+function ratio(group){return group.p?group.a/group.p:0}
+function inMonth(y,m){return rows.filter(x=>Number(x.y)===Number(y)&&x.m===MONTHS[m])}
+function rag(group){if(!group.n)return [0,'መረጃ የለም','N'];const r=ratio(group);return RAG.find(item=>r>=item[0])||RAG[RAG.length-1]}
+function grouped(items,key,names){return names.map(name=>({name,group:sum(items.filter(x=>x[key]===name))})).filter(item=>item.group.n)}
+function listHtml(groups){if(!groups.length)return '<div class="empty">ለዚህ ወር መረጃ የለም።</div>';return groups.map(({name,group})=>{const r=ratio(group),state=rag(group);return `<div class="it"><div class="top"><strong>${esc(name)}</strong><span class="rag ${state[2]}">${percent(r)} · ${state[1]}</span></div><div class="meter"><i style="width:${Math.max(0,Math.min(100,r*100))}%"></i></div><div class="muted">${fmt(group.a)} / ${fmt(group.p)} · ${group.n} ክንውኖች</div></div>`}).join('')}
+function statusText(items){const counts=STATUSES.map(s=>items.filter(x=>x.s===s).length);return {counts,html:counts.map((n,i)=>`<i style="width:${items.length?n/items.length*100:0}%;background:${STATUS_COLORS[i]}"></i>`).join(''),label:STATUSES.map((s,i)=>`${s} ${counts[i]}`).join(' · ')}}
+function reportFor(items,tot,centerGroups,deptGroups,gaps,late,decision){const lines=groups=>groups.filter(x=>x.group.n).map(x=>'• '+x.name+' '+percent(ratio(x.group))+' ('+fmt(x.group.a)+'/'+fmt(x.group.p)+')').join('\n');return `ጋይዮስ — ${MONTHS[selectedMonth]} ${selectedYear} ሪፖርት\nአጠቃላይ አፈጻጸም፦ ${percent(ratio(tot))} (${fmt(tot.a)}/${fmt(tot.p)})\nክንውኖች፦ ${tot.n} · ዕቅድ ያደረሱ፦ ${tot.met}\nViews / Reach፦ ${fmt(tot.reach)}\n\nማዕከላት\n${lines(centerGroups)||'—'}\n\nዲፓርትመንቶች\n${lines(deptGroups)||'—'}\n\nዋና ክፍተቶች\n${gaps.slice(0,3).map(x=>'• '+x.t+' (−'+fmt(x.p-x.a)+')').join('\n')||'—'}\n\nዘግይተዋል፦ ${late} · ውሳኔ ይፈልጋሉ፦ ${decision}`}
+function render(){const current=inMonth(selectedYear,selectedMonth),total=sum(current),r=ratio(total),state=rag(total),bar=statusText(current);$('hp').textContent=percent(r);$('hr').textContent=state[1];$('hr').className='rag '+state[2];$('k1').textContent=total.n;$('k2').textContent=`${total.met} / ${total.n}`;$('k3').textContent=fmt(total.reach);$('statusBar').innerHTML=bar.html;$('statusLegend').textContent=bar.label;$('periodLabel').textContent=MONTHS[selectedMonth]+' '+selectedYear;
+const centerGroups=grouped(current,'c',CENTERS.concat(['መሳለሚያ']));const deptGroups=grouped(current,'d',DEPTS);$('centerList').innerHTML=listHtml(centerGroups);$('deptList').innerHTML=listHtml(deptGroups);
+let pm=selectedMonth-1,py=selectedYear;if(pm<0){pm=12;py--}const prev=sum(inMonth(py,pm));const change=prev.n?Math.round((r-ratio(prev))*100):null;const worst=centerGroups.slice().sort((a,b)=>ratio(a.group)-ratio(b.group))[0];const late=current.filter(x=>x.s===STATUSES[3]).length;const decision=current.filter(x=>x.s===STATUSES[4]).length;const below=current.filter(x=>number(x.a)<number(x.p)).length;
+$('narrative').textContent=total.n?`${MONTHS[selectedMonth]} ${selectedYear}፦ ${total.n} ክንውኖች ተመዝግበዋል፤ አጠቃላይ አፈጻጸም ${percent(r)}${change===null?'':` (ከቀደመው ወር ${change>=0?'+':''}${change} ነጥብ)`}። ${worst?`ዝቅተኛው አፈጻጸም ያለው ማዕከል ${worst.name} (${percent(ratio(worst.group))}) ነው።`:''} ${below} ክንውኖች ዕቅድ አልደረሱም፤ ${late} ዘግይተዋል፤ ${decision} ውሳኔ ይፈልጋሉ።`:'ለዚህ ወር መረጃ አልተመዘገበም።';
+const gaps=current.filter(x=>number(x.a)<number(x.p)).sort((a,b)=>(b.p-b.a)-(a.p-a.a)).slice(0,5);$('gapList').innerHTML=gaps.length?gaps.map(x=>`<div class="it"><div class="top"><strong>${esc(x.t)}</strong><span class="rag R">−${fmt(x.p-x.a)}</span></div><div class="muted">${esc(x.c)} · ${esc(x.d)} · ${x.why?esc(x.why):'ምክንያት አልተሞላም'}</div></div>`).join(''):'<div class="empty">ክፍተት የለም።</div>';
+const centerTotal=centerGroups.reduce((s,x)=>s+x.group.p+x.group.a,0),deptTotal=deptGroups.reduce((s,x)=>s+x.group.p+x.group.a,0),combined=total.p+total.a;const missing=current.filter(x=>x.a<x.p&&!(x.why&&x.act&&x.own&&x.due)).length;const conflict=current.filter(x=>(x.s===STATUSES[2]&&x.a<x.p)||(x.s===STATUSES[1]&&x.a>=x.p)).length;const checks=[[centerTotal===combined&&deptTotal===combined,'የማዕከላት ድምር = የዲፓርትመንቶች ድምር = ጠቅላላ'],[missing===0,`ከዕቅድ በታች ሆነው ምክንያት/እርምጃ/ኃላፊ/ቀን ያልተሞላ፦ ${missing}`],[conflict===0,`ሁኔታና ውጤት የሚጋጩ ክንውኖች፦ ${conflict}`],[!(total.n>=5&&total.met===total.n),'ሁሉም ክንውን ዕቅድ ደርሷል ከሆነ ዕቅዶች ከምንጭ ይረጋገጡ']];$('qualityChecks').innerHTML=checks.map(c=>`<div class="checkline"><span class="checkicon ${c[0]?'G':'A'}">${c[0]?'✓':'!'}</span><span>${esc(c[1])}</span></div>`).join('');
+$('reportText').value=total.n?reportFor(current,total,centerGroups,deptGroups,gaps,late,decision):'';renderRecords();}
+function renderRecords(){const current=inMonth(selectedYear,selectedMonth);const term=$('search').value.trim().toLocaleLowerCase();const filter=$('statusFilter').value;const filtered=current.filter(x=>(!filter||x.s===filter)&&(!term||[x.t,x.id,x.own,x.c,x.d,x.why,x.act,x.ev].some(v=>String(v||'').toLocaleLowerCase().includes(term)))).sort((a,b)=>(Number(a.dy)||0)-(Number(b.dy)||0)||a.t.localeCompare(b.t,'am'));$('recordCount').textContent=`${filtered.length} / ${current.length} ክንውኖች`;if(!filtered.length){$('recordList').innerHTML='<div class="empty">በዚህ ወር የሚታይ ክንውን የለም።</div>';return}$('recordList').innerHTML=filtered.map(x=>{const r=x.p?x.a/x.p:0;const k=rag({n:1,p:x.p,a:x.a});return `<div class="record"><div class="top"><div style="min-width:0"><div class="recordtitle">${esc(x.t)}</div><div class="recordmeta">${esc(x.id)} · ${esc(x.c)} · ${esc(x.d)}${x.dy?' · ቀን '+esc(x.dy):''} · ${esc(x.s)}</div></div><div class="recordactions"><button type="button" data-edit="${esc(x.id)}">አስተካክል</button></div></div><div class="top" style="margin-top:7px"><span class="muted">${fmt(x.a)} / ${fmt(x.p)} · ${percent(r)}</span><span class="rag ${k[2]}">${k[1]}</span></div><div class="meter"><i style="width:${Math.max(0,Math.min(100,r*100))}%"></i></div></div>`}).join('')}
+function setTab(name){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===name));if(name==='form')$('formPeriod').textContent=MONTHS[selectedMonth]+' '+selectedYear;window.scrollTo({top:0,behavior:'smooth'})}
+function newForm(){ $('recordId').value='';$('formTitle').textContent='አዲስ ክንውን';$('dept').value=DEPTS[0];$('center').value=CENTERS[0];$('title').value='';$('planned').value='';$('actual').value='';$('status').value=STATUSES[0];$('priority').value=PRIORITIES[1];$('day').value='';$('reach').value='';$('reason').value='';$('action').value='';$('owner').value='';$('due').value='';$('evidence').value='';$('formError').textContent='';$('deleteBtn').classList.add('hidden');$('saveBtn').textContent='አስቀምጥ';$('formPeriod').textContent=MONTHS[selectedMonth]+' '+selectedYear}
+function editRecord(id){const x=rows.find(r=>r.id===id);if(!x)return;newForm();$('recordId').value=x.id;$('formTitle').textContent='ማስተካከያ — '+x.id;$('dept').value=x.d;$('center').value=x.c;$('title').value=x.t;$('planned').value=x.p;$('actual').value=x.a;$('status').value=x.s;$('priority').value=x.pr;$('day').value=x.dy;$('reach').value=x.rc;$('reason').value=x.why;$('action').value=x.act;$('owner').value=x.own;$('due').value=x.due;$('evidence').value=x.ev;$('formPeriod').textContent=x.m+' '+x.y+' (የተመዘገበበት ወር)';$('deleteBtn').classList.remove('hidden');$('saveBtn').textContent='ለውጡን አስቀምጥ';setTab('form')}
+function validateAndSave(){const val=id=>$(id).value.trim();const p=Number(val('planned')),a=Number(val('actual')),rc=val('reach')===''?0:Number(val('reach')),day=val('day')===''?'':Number(val('day'));const errors=[];if(!val('title'))errors.push('የክንውን ርዕስ ያስፈልጋል።');if(!Number.isFinite(p)||p<=0)errors.push('ዕቅድ ከ0 በላይ መሆን አለበት።');if(!Number.isFinite(a)||a<0)errors.push('የተከናወነ ቁጥር 0 ወይም ከዚያ በላይ መሆን አለበት።');if(!Number.isFinite(rc)||rc<0)errors.push('Views / Reach አሉታዊ መሆን አይችልም።');if(day!==''&&(!Number.isInteger(day)||day<1||day>(selectedMonth===12?6:30)))errors.push('የክንውን ቀን ትክክለኛ ያስገቡ።');if(Number.isFinite(p)&&Number.isFinite(a)&&a<p){if(!val('reason'))errors.push('ከዕቅድ በታች ስለሆነ ምክንያት ያስፈልጋል።');if(!val('action'))errors.push('ከዕቅድ በታች ስለሆነ የተወሰደ እርምጃ ያስፈልጋል።');if(!val('owner'))errors.push('ከዕቅድ በታች ስለሆነ ኃላፊ ያስፈልጋል።');if(!val('due'))errors.push('ከዕቅድ በታች ስለሆነ የማጠናቀቂያ ቀን ያስፈልጋል።');if(val('status')===STATUSES[2])errors.push('ከዕቅድ በታች ሲሆን ሁኔታው «ተጠናቋል» መሆን አይችልም።')};if(errors.length){$('formError').innerHTML=errors.map(esc).join('<br>');return}
+const id=val('recordId')||makeId(rows);const existing=rows.find(x=>x.id===id);const record={id,y:existing?existing.y:selectedYear,m:existing?existing.m:MONTHS[selectedMonth],p,a,rc,d:val('dept'),c:val('center'),t:val('title'),s:val('status'),pr:val('priority'),dy:day=== ''?'':String(day),why:val('reason'),act:val('action'),own:val('owner'),due:val('due'),ev:val('evidence'),updatedAt:new Date().toISOString()};const before=rows.slice();rows=existing?rows.map(x=>x.id===id?record:x):[...rows,record];if(!persist()){rows=before;return}newForm();render();setTab('list');}
+function deleteCurrent(){const id=$('recordId').value;if(!id)return;if(!deleteArmed){deleteArmed=true;$('deleteBtn').textContent='እርግጠኛ ነዎት? እንደገና ይጫኑ';clearTimeout(deleteTimer);deleteTimer=setTimeout(()=>{deleteArmed=false;$('deleteBtn').textContent='ሰርዝ'},4500);return}deleteArmed=false;clearTimeout(deleteTimer);const before=rows.slice();rows=rows.filter(x=>x.id!==id);if(!persist()){rows=before;return}newForm();render();setTab('list')}
+function download(filename,content,mime){const blob=new Blob([content],{type:mime});const url=URL.createObjectURL(blob);const anchor=document.createElement('a');anchor.href=url;anchor.download=filename;document.body.appendChild(anchor);anchor.click();anchor.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function exportCSV(){const headers=['id','y','m','d','c','dy','t','p','a','s','pr','rc','why','act','own','due','ev','updatedAt'];const quote=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const csv='\ufeff'+[headers.join(','),...rows.map(row=>headers.map(h=>quote(row[h])).join(','))].join('\r\n');download(`GAIUS_Records_${selectedYear}_${MONTHS[selectedMonth]}.csv`,csv,'text/csv;charset=utf-8');}
+function backupJSON(){const backup={app:'Gaius Report System',version:2,exportedAt:new Date().toISOString(),records:rows};download(`GAIUS_Backup_${new Date().toISOString().slice(0,10)}.json`,JSON.stringify(backup,null,2),'application/json;charset=utf-8')}
+async function restoreJSON(file){try{const text=await file.text();const data=JSON.parse(text);const imported=Array.isArray(data)?data:data.records;if(!Array.isArray(imported))throw new Error('invalid');const cleaned=imported.filter(x=>x&&x.id).map(normalizeRecord);if(!cleaned.length&&imported.length)throw new Error('invalid');if(!confirm(`በBackup ፋይሉ ውስጥ ${cleaned.length} ክንውኖች አሉ።\n\nOK = ከአሁኑ ዳታ ጋር አዋህድ (ተመሳሳይ ID ካለ አዲሱ ይተካል)።\nCancel = ምንም አታድርግ።`))return;const map=new Map(rows.map(x=>[x.id,x]));cleaned.forEach(x=>map.set(x.id,x));const before=rows;rows=Array.from(map.values());if(!persist()){rows=before;return}render();alert(`${cleaned.length} ክንውኖች ከBackup ፋይሉ ጋር ተዋህደዋል።`)}catch(error){alert('Backup ፋይሉ ሊነበብ አልቻለም። ትክክለኛውን JSON Backup ይምረጡ።')}}
+async function copyOrShare(){const value=$('reportText').value;if(!value){$('shareMessage').textContent='ለማጋራት የወሩ መረጃ የለም።';return}$('shareMessage').textContent='';try{if(navigator.share){await navigator.share({title:`ጋይዮስ — ${MONTHS[selectedMonth]} ${selectedYear}`,text:value});return}}catch(error){if(error&&error.name==='AbortError')return}try{await navigator.clipboard.writeText(value);$('shareMessage').textContent='ሪፖርቱ ተቀድቷል።'}catch(error){$('reportText').focus();$('reportText').select();$('shareMessage').textContent='ሪፖርቱ ተመርጧል፤ Copy ያድርጉ።'}}
+function changeTheme(){const root=document.documentElement;const next=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=next;localStorage.setItem('gaius-theme',next);$('themeBtn').textContent=next==='dark'?'☀':'◐'}
+function applyTheme(){const theme=localStorage.getItem('gaius-theme');if(theme==='dark'||theme==='light')document.documentElement.dataset.theme=theme;$('themeBtn').textContent=document.documentElement.dataset.theme==='dark'?'☀':'◐'}
+function bind(){document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.tab==='form')newForm();setTab(btn.dataset.tab)}));$('mo').addEventListener('change',()=>{selectedMonth=MONTHS.indexOf($('mo').value);render()});$('yr').addEventListener('change',()=>{const n=Number($('yr').value);if(Number.isInteger(n)&&n>=2000&&n<=2100){selectedYear=n;render()}else{$('yr').value=selectedYear}});$('search').addEventListener('input',renderRecords);$('statusFilter').addEventListener('change',renderRecords);$('recordList').addEventListener('click',e=>{const button=e.target.closest('[data-edit]');if(button)editRecord(button.dataset.edit)});$('saveBtn').addEventListener('click',validateAndSave);$('newBtn').addEventListener('click',newForm);$('deleteBtn').addEventListener('click',deleteCurrent);$('csvBtn').addEventListener('click',exportCSV);$('backupBtn').addEventListener('click',backupJSON);$('restoreFile').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(file)restoreJSON(file);e.target.value=''});$('copyReport').addEventListener('click',copyOrShare);$('shareJump').addEventListener('click',()=>{setTab('dash');$('shareCard').scrollIntoView({behavior:'smooth',block:'start'})});$('themeBtn').addEventListener('click',changeTheme)}
+load();init();applyTheme();newForm();bind();render();
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('Offline caching unavailable',err)))}
+})();
+</script>
+</body>
+</html>
